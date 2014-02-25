@@ -33,12 +33,14 @@ rsync i wykorzystujące deduplikację
 %setup -q
 
 %build
-%cmake .
+install -d build
+cd build
+%cmake ..
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
+%{__make} install -C build \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
