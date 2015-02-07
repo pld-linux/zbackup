@@ -1,12 +1,12 @@
 Summary:	A versatile deduplicating backup tool
 Summary(pl.UTF-8):	Uniwersalne narzędzie do deduplikacji kopii zapasowych
 Name:		zbackup
-Version:	1.3
+Version:	1.4.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/Archiving
 Source0:	https://github.com/zbackup/zbackup/archive/%{version}.tar.gz
-# Source0-md5:	53a07960447ae7a7b1d71f71798080a7
+# Source0-md5:	143c69e1b8a7c016224d836beae3b7e1
 URL:		http://zbackup.org/
 BuildRequires:	cmake >= 2.8.2
 BuildRequires:	lzma-devel
