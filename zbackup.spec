@@ -2,7 +2,7 @@ Summary:	A versatile deduplicating backup tool
 Summary(pl.UTF-8):	Uniwersalne narzędzie do deduplikacji kopii zapasowych
 Name:		zbackup
 Version:	1.4.4
-Release:	11
+Release:	12
 License:	GPL v2+ with OpenSSL Exception
 Group:		Applications/Archiving
 #Source0Download: https://github.com/zbackup/zbackup/releases
@@ -43,6 +43,7 @@ dopóki pliki nie różnią się bardzo - nie wymaga to dużo miejsca.
 %build
 install -d build
 cd build
+export CXXFLAGS="%{rpmcxxflags} -std=c++11"
 %cmake ..
 %{__make}
 
