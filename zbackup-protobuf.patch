@@ -1,0 +1,11 @@
+--- zbackup-1.4.4/backup_restorer.cc.orig	2015-09-16 09:28:04.000000000 +0200
++++ zbackup-1.4.4/backup_restorer.cc	2024-09-21 12:19:53.157978566 +0200
+@@ -27,7 +27,7 @@ void restore( ChunkStorage::Reader & chu
+   // TODO: this disables size checks for each separate message. Figure a better
+   // way to do this while keeping them enabled. It seems we need to create an
+   // instance of CodedInputStream for each message, but it might be expensive
+-  cis.SetTotalBytesLimit( backupData.size(), -1 );
++  cis.SetTotalBytesLimit( backupData.size() );
+ 
+   // Used when emitting chunks
+   string chunk;

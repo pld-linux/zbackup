@@ -2,15 +2,17 @@ Summary:	A versatile deduplicating backup tool
 Summary(pl.UTF-8):	Uniwersalne narzędzie do deduplikacji kopii zapasowych
 Name:		zbackup
 Version:	1.4.4
-Release:	13
+Release:	14
 License:	GPL v2+ with OpenSSL Exception
 Group:		Applications/Archiving
 #Source0Download: https://github.com/zbackup/zbackup/releases
 #TODO: Source0:	https://github.com/zbackup/zbackup/archive/%{version}/%{name}-%{version}.tar.gz
 Source0:	https://github.com/zbackup/zbackup/archive/%{version}.tar.gz
 # Source0-md5:	0753ca5d61533f951d6ebb6f087efa0b
+Patch0:		%{name}-protobuf.patch
 URL:		http://zbackup.org/
 BuildRequires:	cmake >= 2.8.2
+BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	lzo-devel
 BuildRequires:	openssl-devel
 BuildRequires:	protobuf-devel
@@ -39,6 +41,7 @@ dopóki pliki nie różnią się bardzo - nie wymaga to dużo miejsca.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 install -d build
