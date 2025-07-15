@@ -41,7 +41,7 @@ dopóki pliki nie różnią się bardzo - nie wymaga to dużo miejsca.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 install -d build
